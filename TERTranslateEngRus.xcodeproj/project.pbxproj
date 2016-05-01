@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1644266FF45BF82A0E4ECB39 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5C85E2CBC3082852D34A28 /* libPods.a */; };
 		B59BBC761CD61639009A172D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59BBC751CD61639009A172D /* AppDelegate.swift */; };
 		B59BBC781CD61639009A172D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59BBC771CD61639009A172D /* ViewController.swift */; };
 		B59BBC7B1CD61639009A172D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC791CD61639009A172D /* Main.storyboard */; };
 		B59BBC7D1CD61639009A172D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC7C1CD61639009A172D /* Assets.xcassets */; };
 		B59BBC801CD61639009A172D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC7E1CD61639009A172D /* LaunchScreen.storyboard */; };
+		B59BBC881CD61937009A172D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59BBC871CD61937009A172D /* CoreData.framework */; };
+		B59BBDAF1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B59BBDAD1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld */; };
+		B5D380771CD6207C006588B5 /* TERServis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D380761CD6207C006588B5 /* TERServis.swift */; };
+		B5D380791CD62378006588B5 /* TERWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D380781CD62378006588B5 /* TERWord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A5C85E2CBC3082852D34A28 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A6C710E38CE24AB69AAEE42 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8BD2C59B48623B57E5B60EA5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B59BBC721CD61639009A172D /* TERTranslateEngRus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TERTranslateEngRus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59BBC751CD61639009A172D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B59BBC771CD61639009A172D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,11 @@
 		B59BBC7C1CD61639009A172D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B59BBC7F1CD61639009A172D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B59BBC811CD61639009A172D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B59BBC871CD61937009A172D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B59BBDAC1CD61B09009A172D /* TERTranslateEngRus-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TERTranslateEngRus-Bridging-Header.h"; sourceTree = "<group>"; };
+		B59BBDAE1CD61B47009A172D /* TERTranslateEngRus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TERTranslateEngRus.xcdatamodel; sourceTree = "<group>"; };
+		B5D380761CD6207C006588B5 /* TERServis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TERServis.swift; sourceTree = "<group>"; };
+		B5D380781CD62378006588B5 /* TERWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TERWord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +42,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B59BBC881CD61937009A172D /* CoreData.framework in Frameworks */,
+				1644266FF45BF82A0E4ECB39 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42A25C259A8B3A2B072E5DD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A6C710E38CE24AB69AAEE42 /* Pods.debug.xcconfig */,
+				8BD2C59B48623B57E5B60EA5 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B59BBC691CD61639009A172D = {
 			isa = PBXGroup;
 			children = (
+				B59BBDAC1CD61B09009A172D /* TERTranslateEngRus-Bridging-Header.h */,
 				B59BBC741CD61639009A172D /* TERTranslateEngRus */,
 				B59BBC731CD61639009A172D /* Products */,
+				42A25C259A8B3A2B072E5DD0 /* Pods */,
+				C8BFB13FF4DD69AF0378D2EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +87,20 @@
 				B59BBC7C1CD61639009A172D /* Assets.xcassets */,
 				B59BBC7E1CD61639009A172D /* LaunchScreen.storyboard */,
 				B59BBC811CD61639009A172D /* Info.plist */,
+				B59BBDAD1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld */,
+				B5D380761CD6207C006588B5 /* TERServis.swift */,
+				B5D380781CD62378006588B5 /* TERWord.swift */,
 			);
 			path = TERTranslateEngRus;
+			sourceTree = "<group>";
+		};
+		C8BFB13FF4DD69AF0378D2EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B59BBC871CD61937009A172D /* CoreData.framework */,
+				0A5C85E2CBC3082852D34A28 /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B59BBC841CD61639009A172D /* Build configuration list for PBXNativeTarget "TERTranslateEngRus" */;
 			buildPhases = (
+				D35E4356B6ED0D64E7B02465 /* Check Pods Manifest.lock */,
 				B59BBC6E1CD61639009A172D /* Sources */,
 				B59BBC6F1CD61639009A172D /* Frameworks */,
 				B59BBC701CD61639009A172D /* Resources */,
+				AA4581B5235E07F618F3F89E /* Embed Pods Frameworks */,
+				48149B69D690BB3DF0D306B3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +172,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48149B69D690BB3DF0D306B3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA4581B5235E07F618F3F89E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D35E4356B6ED0D64E7B02465 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B59BBC6E1CD61639009A172D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B59BBC781CD61639009A172D /* ViewController.swift in Sources */,
+				B5D380791CD62378006588B5 /* TERWord.swift in Sources */,
+				B5D380771CD6207C006588B5 /* TERServis.swift in Sources */,
 				B59BBC761CD61639009A172D /* AppDelegate.swift in Sources */,
+				B59BBDAF1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,23 +342,29 @@
 		};
 		B59BBC851CD61639009A172D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A6C710E38CE24AB69AAEE42 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TERTranslateEngRus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IDK.TERTranslateEngRus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TERTranslateEngRus-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		B59BBC861CD61639009A172D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BD2C59B48623B57E5B60EA5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TERTranslateEngRus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IDK.TERTranslateEngRus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TERTranslateEngRus-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -288,8 +387,22 @@
 				B59BBC861CD61639009A172D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B59BBDAD1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B59BBDAE1CD61B47009A172D /* TERTranslateEngRus.xcdatamodel */,
+			);
+			currentVersion = B59BBDAE1CD61B47009A172D /* TERTranslateEngRus.xcdatamodel */;
+			path = TERTranslateEngRus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B59BBC6A1CD61639009A172D /* Project object */;
 }
