@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B59BBC761CD61639009A172D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59BBC751CD61639009A172D /* AppDelegate.swift */; };
+		B59BBC781CD61639009A172D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59BBC771CD61639009A172D /* ViewController.swift */; };
+		B59BBC7B1CD61639009A172D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC791CD61639009A172D /* Main.storyboard */; };
+		B59BBC7D1CD61639009A172D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC7C1CD61639009A172D /* Assets.xcassets */; };
+		B59BBC801CD61639009A172D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC7E1CD61639009A172D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B59BBC721CD61639009A172D /* TERTranslateEngRus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TERTranslateEngRus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B59BBC751CD61639009A172D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B59BBC771CD61639009A172D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B59BBC7A1CD61639009A172D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B59BBC7C1CD61639009A172D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B59BBC7F1CD61639009A172D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B59BBC811CD61639009A172D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B59BBC6F1CD61639009A172D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B59BBC691CD61639009A172D = {
+			isa = PBXGroup;
+			children = (
+				B59BBC741CD61639009A172D /* TERTranslateEngRus */,
+				B59BBC731CD61639009A172D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B59BBC731CD61639009A172D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B59BBC721CD61639009A172D /* TERTranslateEngRus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B59BBC741CD61639009A172D /* TERTranslateEngRus */ = {
+			isa = PBXGroup;
+			children = (
+				B59BBC751CD61639009A172D /* AppDelegate.swift */,
+				B59BBC771CD61639009A172D /* ViewController.swift */,
+				B59BBC791CD61639009A172D /* Main.storyboard */,
+				B59BBC7C1CD61639009A172D /* Assets.xcassets */,
+				B59BBC7E1CD61639009A172D /* LaunchScreen.storyboard */,
+				B59BBC811CD61639009A172D /* Info.plist */,
+			);
+			path = TERTranslateEngRus;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B59BBC711CD61639009A172D /* TERTranslateEngRus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B59BBC841CD61639009A172D /* Build configuration list for PBXNativeTarget "TERTranslateEngRus" */;
+			buildPhases = (
+				B59BBC6E1CD61639009A172D /* Sources */,
+				B59BBC6F1CD61639009A172D /* Frameworks */,
+				B59BBC701CD61639009A172D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TERTranslateEngRus;
+			productName = TERTranslateEngRus;
+			productReference = B59BBC721CD61639009A172D /* TERTranslateEngRus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B59BBC6A1CD61639009A172D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Константин";
+				TargetAttributes = {
+					B59BBC711CD61639009A172D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = B59BBC6D1CD61639009A172D /* Build configuration list for PBXProject "TERTranslateEngRus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B59BBC691CD61639009A172D;
+			productRefGroup = B59BBC731CD61639009A172D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B59BBC711CD61639009A172D /* TERTranslateEngRus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B59BBC701CD61639009A172D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59BBC801CD61639009A172D /* LaunchScreen.storyboard in Resources */,
+				B59BBC7D1CD61639009A172D /* Assets.xcassets in Resources */,
+				B59BBC7B1CD61639009A172D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B59BBC6E1CD61639009A172D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59BBC781CD61639009A172D /* ViewController.swift in Sources */,
+				B59BBC761CD61639009A172D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B59BBC791CD61639009A172D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B59BBC7A1CD61639009A172D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B59BBC7E1CD61639009A172D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B59BBC7F1CD61639009A172D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B59BBC821CD61639009A172D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B59BBC831CD61639009A172D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B59BBC851CD61639009A172D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TERTranslateEngRus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IDK.TERTranslateEngRus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B59BBC861CD61639009A172D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TERTranslateEngRus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IDK.TERTranslateEngRus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B59BBC6D1CD61639009A172D /* Build configuration list for PBXProject "TERTranslateEngRus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B59BBC821CD61639009A172D /* Debug */,
+				B59BBC831CD61639009A172D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B59BBC841CD61639009A172D /* Build configuration list for PBXNativeTarget "TERTranslateEngRus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B59BBC851CD61639009A172D /* Debug */,
+				B59BBC861CD61639009A172D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B59BBC6A1CD61639009A172D /* Project object */;
+}
