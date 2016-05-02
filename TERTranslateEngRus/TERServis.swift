@@ -13,11 +13,12 @@ enum DataError: String {
     case ServerError = "Error server"
     case ParseError = "Error parse"
 }
+let arrayLanguage: [String: String] = ["En": "Ru", "Ru": "En"]
 
 class TERServis: NSObject {
-    let arrayLanguage: [String: String] = ["en": "ru", "ru": "en"]
 
-    func getTranslate(word: String, language: String, completion: (words: [TERWord]?, error: NSError?) -> Void) {
+    func getServisTranslate(word: String, language: String, completion: (objWord: TERWord?, error: NSString?) -> Void) {
+        
         let strUrl = "http://api.mymemory.translated.net/get?q=\(word)&langpair=\(language)|" +
         arrayLanguage[language]!
         let ecsStr = strUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
@@ -26,13 +27,32 @@ class TERServis: NSObject {
         let session = AFHTTPSessionManager()
         let task = session.dataTaskWithRequest(request) { (response, data, error) -> Void in
             if error == nil && data != nil {
-                let matches = data!["matches"] as! [AnyObject]
-                print(matches[0]["translation"])
+                let responseData = data!["responseData"] as! [String: AnyObject]
+                let transletedText = responseData["translatedText"] as! String
+                if (word == transletedText) {
+                    completion(objWord: nil, error: DataError.UnknownWordError.rawValue)
+                } else {
+                    let wordEn: String?
+                    let wordRu: String?
+                    if language == "en" {
+                        wordEn = word
+                        wordRu = transletedText
+                    } else {
+                        wordEn = transletedText
+                        wordRu = word
+                    }
+                    let objWord = TERWord(wordEn: wordEn!, wordRu: wordRu!)
+                    //                let objWord = TERWord(word_en: word, word_ru: word)
+                    //print(objWord)
+                    completion(objWord: objWord, error: nil)
+                }
+                //print(matches[0]["translation"])
             }
             if error != nil {
                 
-            }
+            }//*/
         }
         task.resume()
     }
+
 }

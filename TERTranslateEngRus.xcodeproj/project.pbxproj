@@ -15,8 +15,13 @@
 		B59BBC801CD61639009A172D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC7E1CD61639009A172D /* LaunchScreen.storyboard */; };
 		B59BBC881CD61937009A172D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59BBC871CD61937009A172D /* CoreData.framework */; };
 		B59BBDAF1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B59BBDAD1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld */; };
+		B5C79C6F1CD7656500C1524A /* DictionaryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C79C6E1CD7656500C1524A /* DictionaryEntity+CoreDataProperties.swift */; };
 		B5D380771CD6207C006588B5 /* TERServis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D380761CD6207C006588B5 /* TERServis.swift */; };
 		B5D380791CD62378006588B5 /* TERWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D380781CD62378006588B5 /* TERWord.swift */; };
+		B5D3807B1CD63927006588B5 /* TERCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3807A1CD63927006588B5 /* TERCache.swift */; };
+		B5D3807D1CD63B91006588B5 /* TERCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3807C1CD63B91006588B5 /* TERCoreData.swift */; };
+		B5D380811CD63C92006588B5 /* DictionaryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3807F1CD63C92006588B5 /* DictionaryEntity.swift */; };
+		B5D380831CD6512E006588B5 /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D380821CD6512E006588B5 /* libMagicalRecord.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +38,13 @@
 		B59BBC871CD61937009A172D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B59BBDAC1CD61B09009A172D /* TERTranslateEngRus-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TERTranslateEngRus-Bridging-Header.h"; sourceTree = "<group>"; };
 		B59BBDAE1CD61B47009A172D /* TERTranslateEngRus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TERTranslateEngRus.xcdatamodel; sourceTree = "<group>"; };
+		B5C79C6E1CD7656500C1524A /* DictionaryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DictionaryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B5D380761CD6207C006588B5 /* TERServis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TERServis.swift; sourceTree = "<group>"; };
 		B5D380781CD62378006588B5 /* TERWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TERWord.swift; sourceTree = "<group>"; };
+		B5D3807A1CD63927006588B5 /* TERCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TERCache.swift; sourceTree = "<group>"; };
+		B5D3807C1CD63B91006588B5 /* TERCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TERCoreData.swift; sourceTree = "<group>"; };
+		B5D3807F1CD63C92006588B5 /* DictionaryEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryEntity.swift; sourceTree = "<group>"; };
+		B5D380821CD6512E006588B5 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/TERTranslateEngRus-adcgyslauxtvbeebuuqflnwvryfj/Build/Products/Debug-iphonesimulator/libMagicalRecord.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D380831CD6512E006588B5 /* libMagicalRecord.a in Frameworks */,
 				B59BBC881CD61937009A172D /* CoreData.framework in Frameworks */,
 				1644266FF45BF82A0E4ECB39 /* libPods.a in Frameworks */,
 			);
@@ -90,6 +101,10 @@
 				B59BBDAD1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld */,
 				B5D380761CD6207C006588B5 /* TERServis.swift */,
 				B5D380781CD62378006588B5 /* TERWord.swift */,
+				B5D3807A1CD63927006588B5 /* TERCache.swift */,
+				B5D3807C1CD63B91006588B5 /* TERCoreData.swift */,
+				B5D3807F1CD63C92006588B5 /* DictionaryEntity.swift */,
+				B5C79C6E1CD7656500C1524A /* DictionaryEntity+CoreDataProperties.swift */,
 			);
 			path = TERTranslateEngRus;
 			sourceTree = "<group>";
@@ -97,6 +112,7 @@
 		C8BFB13FF4DD69AF0378D2EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5D380821CD6512E006588B5 /* libMagicalRecord.a */,
 				B59BBC871CD61937009A172D /* CoreData.framework */,
 				0A5C85E2CBC3082852D34A28 /* libPods.a */,
 			);
@@ -225,11 +241,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D3807D1CD63B91006588B5 /* TERCoreData.swift in Sources */,
 				B59BBC781CD61639009A172D /* ViewController.swift in Sources */,
 				B5D380791CD62378006588B5 /* TERWord.swift in Sources */,
 				B5D380771CD6207C006588B5 /* TERServis.swift in Sources */,
 				B59BBC761CD61639009A172D /* AppDelegate.swift in Sources */,
+				B5D3807B1CD63927006588B5 /* TERCache.swift in Sources */,
+				B5D380811CD63C92006588B5 /* DictionaryEntity.swift in Sources */,
 				B59BBDAF1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld in Sources */,
+				B5C79C6F1CD7656500C1524A /* DictionaryEntity+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -346,7 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TERTranslateEngRus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IDK.TERTranslateEngRus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -360,7 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TERTranslateEngRus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IDK.TERTranslateEngRus;
 				PRODUCT_NAME = "$(TARGET_NAME)";

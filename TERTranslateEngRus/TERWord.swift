@@ -10,11 +10,11 @@ import UIKit
 
 class TERWord: NSObject {
 
-    let word_en: String?
-    let word_ru: String?
+    let wordEn: String?
+    let wordRu: String?
     
-    init(word_en: String, word_ru: String) {
-        self.word_en = word_en
-        self.word_ru = word_ru
+    init(wordEn: String, wordRu: String) {
+        self.wordEn = wordEn
+        self.wordRu = wordRu
     }
 }
