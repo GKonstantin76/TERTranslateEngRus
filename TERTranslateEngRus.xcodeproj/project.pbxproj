@@ -22,6 +22,7 @@
 		B5D3807D1CD63B91006588B5 /* TERCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3807C1CD63B91006588B5 /* TERCoreData.swift */; };
 		B5D380811CD63C92006588B5 /* DictionaryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D3807F1CD63C92006588B5 /* DictionaryEntity.swift */; };
 		B5D380831CD6512E006588B5 /* libMagicalRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D380821CD6512E006588B5 /* libMagicalRecord.a */; };
+		B5DB1E811CDBBA0B0052023D /* TERTranslateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DB1E801CDBBA0B0052023D /* TERTranslateController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		B5D3807C1CD63B91006588B5 /* TERCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TERCoreData.swift; sourceTree = "<group>"; };
 		B5D3807F1CD63C92006588B5 /* DictionaryEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryEntity.swift; sourceTree = "<group>"; };
 		B5D380821CD6512E006588B5 /* libMagicalRecord.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMagicalRecord.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/TERTranslateEngRus-adcgyslauxtvbeebuuqflnwvryfj/Build/Products/Debug-iphonesimulator/libMagicalRecord.a"; sourceTree = "<group>"; };
+		B5DB1E801CDBBA0B0052023D /* TERTranslateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TERTranslateController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				B5D3807C1CD63B91006588B5 /* TERCoreData.swift */,
 				B5D3807F1CD63C92006588B5 /* DictionaryEntity.swift */,
 				B5C79C6E1CD7656500C1524A /* DictionaryEntity+CoreDataProperties.swift */,
+				B5DB1E801CDBBA0B0052023D /* TERTranslateController.swift */,
 			);
 			path = TERTranslateEngRus;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				B5D380771CD6207C006588B5 /* TERServis.swift in Sources */,
 				B59BBC761CD61639009A172D /* AppDelegate.swift in Sources */,
 				B5D3807B1CD63927006588B5 /* TERCache.swift in Sources */,
+				B5DB1E811CDBBA0B0052023D /* TERTranslateController.swift in Sources */,
 				B5D380811CD63C92006588B5 /* DictionaryEntity.swift in Sources */,
 				B59BBDAF1CD61B47009A172D /* TERTranslateEngRus.xcdatamodeld in Sources */,
 				B5C79C6F1CD7656500C1524A /* DictionaryEntity+CoreDataProperties.swift in Sources */,

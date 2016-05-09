@@ -28,13 +28,14 @@ class TERServis: NSObject {
         let task = session.dataTaskWithRequest(request) { (response, data, error) -> Void in
             if error == nil && data != nil {
                 let responseData = data!["responseData"] as! [String: AnyObject]
-                let transletedText = responseData["translatedText"] as! String
+                let transletedText = (responseData["translatedText"] as! String).lowercaseString.capitalizedString
                 if (word == transletedText) {
-                    completion(objWord: nil, error: DataError.UnknownWordError.rawValue)
+                    let objWord = TERWord(wordEn: DataError.UnknownWordError.rawValue, wordRu: "")
+                    completion(objWord: objWord, error: DataError.UnknownWordError.rawValue)
                 } else {
                     let wordEn: String?
                     let wordRu: String?
-                    if language == "en" {
+                    if language == "En" {
                         wordEn = word
                         wordRu = transletedText
                     } else {
