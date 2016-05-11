@@ -28,7 +28,7 @@ class TERCache: NSObject {
     }
     
     func getAllTranslate() -> [TERWord] {
-        return coreData.getTranslateAllWordsFromCoreData("", language: "En")
+        return coreData.getTranslateAllWordsFromCoreData("", language: "Ru")
     }
 
     func getAllWordsPattern(pattern: String, language: String, completion: (translateWord : [TERWord]/*, error: String?*/) -> Void) {
@@ -36,10 +36,10 @@ class TERCache: NSObject {
         if resultWords[0].wordEn! == "" {
             servis.getServisTranslate(pattern, language: language) { (objWord, error) in
 //                if error == nil {
-                //if objWord?.wordEn != DataError.UnknownWordError.rawValue {
- //                   self.coreData.createTranslate(objWord!)
+                if objWord?.wordEn != DataError.UnknownWordError.rawValue {
+                    self.coreData.createTranslate(objWord!)
+                }
                     resultWords[0] = objWord!
-//                }
                     //else {
                     //print(error)
                 //}

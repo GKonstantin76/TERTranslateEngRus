@@ -47,7 +47,7 @@ class TERCoreData: NSObject {
     
     func getTranslateAllWordsFromCoreData(word: String, language: String) -> [TERWord] {
         let predicate = NSPredicate(format: "self.word" + language + " like[cd] " + "\"*\(word)*\"")
-        let arrayDictionary = DictionaryEntity.findAllWithPredicate(predicate) as![DictionaryEntity]
+        let arrayDictionary = DictionaryEntity.findAllSortedBy("word" + language, ascending: true, withPredicate:predicate) as![DictionaryEntity]
         var arrayWords = [TERWord]()
         if arrayDictionary.count > 0 {
             for dictionary in arrayDictionary {

@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var arrayTranslate = [TERWord]()
     var searchResultController: UISearchController!
+    var searchText: String?
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -20,9 +21,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchResultController.searchResultsUpdater = self
         searchResultController.searchBar.placeholder = nil
         searchResultController.searchBar.sizeToFit()
+        self.definesPresentationContext = true
         self.tableView.tableHeaderView = searchResultController.searchBar
         let cache = TERCache()
-        arrayTranslate = cache.getAllTranslate()
+        self.arrayTranslate = cache.getAllTranslate()
         // Do any additional setup after loading the view, typically from a nib.
         //let cache = TERCache()
         //cache.getTranslate("ball", language: "En") { (words, error) in
@@ -52,28 +54,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier(ident)
         let objWord: TERWord = self.arrayTranslate[indexPath.row]
         //if ()
-        cell!.textLabel?.text = objWord.wordEn
+        cell!.textLabel?.text = objWord.wordRu
         return cell!
     }
     
     // MARK: - UISearchResultsUpdating
 
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        var stringSearch = searchController.searchBar.text?.lowercaseString.capitalizedString
-        if stringSearch!.characters.count == 0 {
-            stringSearch = ""
-        }
-            let cache = TERCache()
-            cache.getAllWordsPattern(stringSearch!, language: "En", completion: { (translateWords/*, error*/) in
+//        let lang = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)!
+        
+        let stringSearch = searchController.searchBar.text?.lowercaseString.capitalizedString
+        let cache = TERCache()
+//        if let tempStr = stringSearch {
+//            stringSearch = tempStr
+        if stringSearch!.characters.count > 0 {
+            self.searchText = stringSearch!
+            cache.getAllWordsPattern(stringSearch!, language: "Ru", completion: { (translateWords/*, error*/) in
                 //if (error == nil) {
-                    self.arrayTranslate = translateWords
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.tableView.reloadData()
-                    })
+                self.arrayTranslate = translateWords
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                })
                 /*} else {
-                    print(DataError.UnknownWordError.rawValue)
+                print(DataError.UnknownWordError.rawValue)
                 }*/
             })
+        } else {
+            self.arrayTranslate = cache.getAllTranslate()
+            self.tableView.reloadData()
+        }
         
     }
     
