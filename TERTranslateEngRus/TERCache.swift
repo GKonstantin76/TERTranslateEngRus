@@ -11,6 +11,12 @@ import UIKit
 class TERCache: NSObject {
     let servis = TERServis()
     let coreData = TERCoreData()
+    let currentLanguage: String?
+    
+    init(currentLanguage: String) {
+        self.currentLanguage = currentLanguage
+    }
+    
     func getTranslate(word: String, language: String, completion: (translateWord : TERWord, error: String?) -> Void) {
         let resultWord = coreData.getTranslateWordFromCoreData(word, language: language)
         if resultWord.wordEn! == "" {
@@ -28,7 +34,7 @@ class TERCache: NSObject {
     }
     
     func getAllTranslate() -> [TERWord] {
-        return coreData.getTranslateAllWordsFromCoreData("", language: "Ru")
+        return coreData.getTranslateAllWordsFromCoreData("", language: self.currentLanguage!)
     }
 
     func getAllWordsPattern(pattern: String, language: String, completion: (translateWord : [TERWord]/*, error: String?*/) -> Void) {

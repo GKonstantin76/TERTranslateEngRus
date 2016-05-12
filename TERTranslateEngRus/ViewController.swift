@@ -12,7 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var arrayTranslate = [TERWord]()
     var searchResultController: UISearchController!
-    var searchText: String?
+    var searchText = ""
+    var currentLanguage = "En"
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,7 +24,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         searchResultController.searchBar.sizeToFit()
         self.definesPresentationContext = true
         self.tableView.tableHeaderView = searchResultController.searchBar
-        let cache = TERCache()
+        setCurrentLanguage()
+        let cache = TERCache(currentLanguage: self.currentLanguage)
         self.arrayTranslate = cache.getAllTranslate()
         // Do any additional setup after loading the view, typically from a nib.
         //let cache = TERCache()
@@ -42,6 +44,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //            print(objWord.wordRu)
 //        }
     }
+    
+    func setCurrentLanguage() {
+        let searchBarMode = searchResultController.searchBar.textInputMode
+        let doubleLang = searchBarMode?.primaryLanguage
+        if doubleLang == "en-US" {
+            self.currentLanguage = "En"
+        } else if doubleLang == "ru-RU" {
+            self.currentLanguage = "Ru"
+        }
+    }
 
     // MARK: - UITableViewDataSource
     
@@ -53,8 +65,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let ident = "identWord"
         let cell = tableView.dequeueReusableCellWithIdentifier(ident)
         let objWord: TERWord = self.arrayTranslate[indexPath.row]
-        //if ()
-        cell!.textLabel?.text = objWord.wordRu
+        if (self.currentLanguage == "En") {
+            cell!.textLabel?.text = objWord.wordEn
+        } else {
+            cell!.textLabel?.text = objWord.wordRu
+        }
         return cell!
     }
     
@@ -62,14 +77,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func updateSearchResultsForSearchController(searchController: UISearchController) {
 //        let lang = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)!
+//        let language = NSLocale.preferredLanguages()
         
+        setCurrentLanguage()
         let stringSearch = searchController.searchBar.text?.lowercaseString.capitalizedString
-        let cache = TERCache()
+        let cache = TERCache(currentLanguage: self.currentLanguage)
 //        if let tempStr = stringSearch {
 //            stringSearch = tempStr
+//        if stringSearch!.characters.count == 0 && self.searchText != "" {
+//            stringSearch = self.searchText
+//            self.searchResultController.searchBar.text = stringSearch
+//        }
+        
         if stringSearch!.characters.count > 0 {
             self.searchText = stringSearch!
-            cache.getAllWordsPattern(stringSearch!, language: "Ru", completion: { (translateWords/*, error*/) in
+            cache.getAllWordsPattern(stringSearch!, language: self.currentLanguage, completion: { (translateWords/*, error*/) in
                 //if (error == nil) {
                 self.arrayTranslate = translateWords
                 dispatch_async(dispatch_get_main_queue(), {
