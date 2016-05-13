@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating /*, UISearchBarDelegate*/ {
     
     var arrayTranslate = [TERWord]()
     var searchResultController: UISearchController!
@@ -18,10 +18,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        self.navigationController?.navigationBarHidden = true
         searchResultController = UISearchController(searchResultsController: nil)
         searchResultController.searchResultsUpdater = self
         searchResultController.searchBar.placeholder = nil
+        searchResultController.dimsBackgroundDuringPresentation = false
         searchResultController.searchBar.sizeToFit()
+//        searchResultController.searchBar.delegate = self
         self.definesPresentationContext = true
         self.tableView.tableHeaderView = searchResultController.searchBar
         setCurrentLanguage()
@@ -43,6 +48,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //            print(objWord.wordEn)
 //            print(objWord.wordRu)
 //        }
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        let dictionary = notification.userInfo
+        let keyBoardFrameBegin = dictionary!["UIKeyboardFrameBeginUserInfoKey"]
+        let keyBoardSize = keyBoardFrameBegin?.CGRectValue.size
+        let heightKeyboard = keyBoardSize?.height
+        
+        let insetTableView = tableView.contentInset
+        let insetBottomTableView = insetTableView.bottom + heightKeyboard!
+        tableView.contentInset = UIEdgeInsetsMake(insetTableView.top, insetTableView.left, insetBottomTableView, insetTableView.right)
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        tableView.contentInset = UIEdgeInsetsZero
+        //let dictionary = notification.userInfo
+//        let keyBoardFrameBegin = dictionary!["UIKeyboardFrameEndUserInfoKey"]
+//        let keyBoardSize = keyBoardFrameBegin?.CGRectValue.size
+//        let heightKeyboard = keyBoardSize?.height
+//        
+//        let insetTableView = tableView.contentInset
+//        let insetBottomTableView = insetTableView.bottom + heightKeyboard!
+//        tableView.contentInset = UIEdgeInsetsMake(insetTableView.top, insetTableView.left, insetBottomTableView, insetTableView.right)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func setCurrentLanguage() {
@@ -75,6 +107,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - UISearchResultsUpdating
 
+//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+//        let stringSearch = searchBar.text?.lowercaseString.capitalizedString
+//    }
+    
     func updateSearchResultsForSearchController(searchController: UISearchController) {
 //        let lang = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)!
 //        let language = NSLocale.preferredLanguages()
