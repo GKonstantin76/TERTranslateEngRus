@@ -9,6 +9,7 @@
 import UIKit
 
 class TERTranslateController: UIViewController {
+    
     var objWord: TERWord?
     @IBOutlet weak var lbWordSource: UILabel!
     @IBOutlet weak var lbWordDestination: UILabel!
@@ -22,15 +23,5 @@ class TERTranslateController: UIViewController {
     @IBAction func actionBack(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

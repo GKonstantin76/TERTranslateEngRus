@@ -9,6 +9,7 @@
 import UIKit
 
 class TERCache: NSObject {
+    
     let servis = TERServis()
     let coreData = TERCoreData()
     let currentLanguage: String?
@@ -37,22 +38,18 @@ class TERCache: NSObject {
         return coreData.getTranslateAllWordsFromCoreData("", language: self.currentLanguage!)
     }
 
-    func getAllWordsPattern(pattern: String, language: String, completion: (translateWord : [TERWord]/*, error: String?*/) -> Void) {
+    func getAllWordsPattern(pattern: String, language: String, completion: (translateWord : [TERWord]) -> Void) {
         var resultWords = coreData.getTranslateAllWordsFromCoreData(pattern, language: language)
         if resultWords[0].wordEn! == "" {
             servis.getServisTranslate(pattern, language: language) { (objWord, error) in
-//                if error == nil {
-                if objWord?.wordEn != DataError.UnknownWordError.rawValue {
+                if error == nil {
                     self.coreData.createTranslate(objWord!)
                 }
                     resultWords[0] = objWord!
-                    //else {
-                    //print(error)
-                //}
-                completion(translateWord: resultWords)//, error: error! as String)
+                completion(translateWord: resultWords)
             }
         } else {
-            completion(translateWord: resultWords/*, error: nil*/)
+            completion(translateWord: resultWords)
         }
     }
     

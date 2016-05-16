@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating /*, UISearchBarDelegate*/ {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
     var arrayTranslate = [TERWord]()
     var searchResultController: UISearchController!
@@ -18,36 +18,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        self.navigationController?.navigationBarHidden = true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         searchResultController = UISearchController(searchResultsController: nil)
         searchResultController.searchResultsUpdater = self
         searchResultController.searchBar.placeholder = nil
         searchResultController.dimsBackgroundDuringPresentation = false
         searchResultController.searchBar.sizeToFit()
-//        searchResultController.searchBar.delegate = self
         self.definesPresentationContext = true
         self.tableView.tableHeaderView = searchResultController.searchBar
         setCurrentLanguage()
         let cache = TERCache(currentLanguage: self.currentLanguage)
+//        self.navigationController?.navigationBarHidden = true
+        self.navigationItem.title = "Translation English to Russian"
         self.arrayTranslate = cache.getAllTranslate()
-        // Do any additional setup after loading the view, typically from a nib.
-        //let cache = TERCache()
-        //cache.getTranslate("ball", language: "En") { (words, error) in
-//            self.arrayTranslate = cache.getAllTranslate()
-//            for objWord in self.arrayTranslate {
-//                print(objWord.wordEn)
-//                print(objWord.wordRu)
-//            }
-        //}
-        
-//        let coreData = TERCoreData()
-//        let array = coreData.getTranslateAllWordsFromCoreData("b", language: "En")
-//        for objWord in array {
-//            print(objWord.wordEn)
-//            print(objWord.wordRu)
-//        }
     }
     
     func keyboardWillShow(notification: NSNotification) {
@@ -63,14 +47,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func keyboardWillHide(notification: NSNotification) {
         tableView.contentInset = UIEdgeInsetsZero
-        //let dictionary = notification.userInfo
-//        let keyBoardFrameBegin = dictionary!["UIKeyboardFrameEndUserInfoKey"]
-//        let keyBoardSize = keyBoardFrameBegin?.CGRectValue.size
-//        let heightKeyboard = keyBoardSize?.height
-//        
-//        let insetTableView = tableView.contentInset
-//        let insetBottomTableView = insetTableView.bottom + heightKeyboard!
-//        tableView.contentInset = UIEdgeInsetsMake(insetTableView.top, insetTableView.left, insetBottomTableView, insetTableView.right)
     }
     
     deinit {
@@ -82,8 +58,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let doubleLang = searchBarMode?.primaryLanguage
         if doubleLang == "en-US" {
             self.currentLanguage = "En"
+            self.navigationItem.title = "Translation English to Russian"
         } else if doubleLang == "ru-RU" {
             self.currentLanguage = "Ru"
+            self.navigationItem.title = "Перевод с Русского на Английский"
         }
     }
 
@@ -97,6 +75,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let ident = "identWord"
         let cell = tableView.dequeueReusableCellWithIdentifier(ident)
         let objWord: TERWord = self.arrayTranslate[indexPath.row]
+        cell!.textLabel?.font = UIFont(name: "Arial", size: 24.0)
+
         if (self.currentLanguage == "En") {
             cell!.textLabel?.text = objWord.wordEn
         } else {
@@ -107,35 +87,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: - UISearchResultsUpdating
 
-//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-//        let stringSearch = searchBar.text?.lowercaseString.capitalizedString
-//    }
-    
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-//        let lang = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)!
-//        let language = NSLocale.preferredLanguages()
-        
         setCurrentLanguage()
         let stringSearch = searchController.searchBar.text?.lowercaseString.capitalizedString
         let cache = TERCache(currentLanguage: self.currentLanguage)
-//        if let tempStr = stringSearch {
-//            stringSearch = tempStr
-//        if stringSearch!.characters.count == 0 && self.searchText != "" {
-//            stringSearch = self.searchText
-//            self.searchResultController.searchBar.text = stringSearch
-//        }
-        
         if stringSearch!.characters.count > 0 {
             self.searchText = stringSearch!
-            cache.getAllWordsPattern(stringSearch!, language: self.currentLanguage, completion: { (translateWords/*, error*/) in
-                //if (error == nil) {
+            cache.getAllWordsPattern(stringSearch!, language: self.currentLanguage, completion: { (translateWords) in
                 self.arrayTranslate = translateWords
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
                 })
-                /*} else {
-                print(DataError.UnknownWordError.rawValue)
-                }*/
             })
         } else {
             self.arrayTranslate = cache.getAllTranslate()
@@ -147,12 +109,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK:- UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let story = UIStoryboard.init(name: "Main", bundle: NSBundle.mainBundle())
-        let translateController: TERTranslateController = story.instantiateViewControllerWithIdentifier("TranslateWindow") as! TERTranslateController
         let objWord = arrayTranslate[indexPath.row]
-        
-        translateController.objWord = objWord
-        self.navigationController?.presentViewController(translateController, animated: true, completion: nil)
+        if objWord.wordRu != "error" {
+            let story = UIStoryboard.init(name: "Main", bundle: NSBundle.mainBundle())
+            let translateController: TERTranslateController = story.instantiateViewControllerWithIdentifier("TranslateWindow") as! TERTranslateController
+            translateController.objWord = objWord
+            self.navigationController?.presentViewController(translateController, animated: true, completion: nil)
+        }
     }
     
 }

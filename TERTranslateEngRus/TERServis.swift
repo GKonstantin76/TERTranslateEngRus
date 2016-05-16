@@ -11,14 +11,12 @@ import UIKit
 enum DataError: String {
     case UnknownWordError = "Word not found"
     case ServerError = "Error server"
-    case ParseError = "Error parse"
 }
 let arrayLanguage: [String: String] = ["En": "Ru", "Ru": "En"]
 
 class TERServis: NSObject {
 
     func getServisTranslate(word: String, language: String, completion: (objWord: TERWord?, error: NSString?) -> Void) {
-        
         let strUrl = "http://api.mymemory.translated.net/get?q=\(word)&langpair=\(language)|" +
         arrayLanguage[language]!
         let ecsStr = strUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
@@ -30,7 +28,7 @@ class TERServis: NSObject {
                 let responseData = data!["responseData"] as! [String: AnyObject]
                 let transletedText = (responseData["translatedText"] as! String).lowercaseString.capitalizedString
                 if (word == transletedText) {
-                    let objWord = TERWord(wordEn: DataError.UnknownWordError.rawValue, wordRu: "")
+                    let objWord = TERWord(wordEn: DataError.UnknownWordError.rawValue, wordRu: "error")
                     completion(objWord: objWord, error: DataError.UnknownWordError.rawValue)
                 } else {
                     let wordEn: String?
@@ -43,15 +41,13 @@ class TERServis: NSObject {
                         wordRu = word
                     }
                     let objWord = TERWord(wordEn: wordEn!, wordRu: wordRu!)
-                    //                let objWord = TERWord(word_en: word, word_ru: word)
-                    //print(objWord)
                     completion(objWord: objWord, error: nil)
                 }
-                //print(matches[0]["translation"])
             }
             if error != nil {
-                
-            }//*/
+                let objWord = TERWord(wordEn: DataError.ServerError.rawValue, wordRu: "error")
+                completion(objWord: objWord, error: error?.localizedDescription)
+            }
         }
         task.resume()
     }

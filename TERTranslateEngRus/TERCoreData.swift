@@ -9,15 +9,6 @@
 import UIKit
 
 class TERCoreData: NSObject {
-    /*func getAllTranslate() -> [TERWord] {
-        let arrayDictionaryEntity = DictionaryEntity.findAll() as! [DictionaryEntity]
-        var arrayTranslate = [TERWord]()
-        for translate in arrayDictionaryEntity {
-            let word = TERWord(wordEn: translate.wordEn, wordRu: translate.wordRu)
-            arrayTranslate.append(word)
-        }
-        return arrayTranslate
-    }*/
     
     func getTranslateWordFromCoreData(word: String, language: String) -> TERWord {
         var wordEn: String?
