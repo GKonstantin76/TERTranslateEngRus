@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TERWord: NSObject {
+class TERWord {
 
     let wordEn: String?
     let wordRu: String?

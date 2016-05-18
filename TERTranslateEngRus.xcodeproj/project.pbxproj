@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1644266FF45BF82A0E4ECB39 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5C85E2CBC3082852D34A28 /* libPods.a */; };
+		7E5EAF391CECD5E800037133 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 7E5EAF381CECD5E800037133 /* README */; };
 		B59BBC761CD61639009A172D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59BBC751CD61639009A172D /* AppDelegate.swift */; };
-		B59BBC781CD61639009A172D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59BBC771CD61639009A172D /* ViewController.swift */; };
+		B59BBC781CD61639009A172D /* TERMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59BBC771CD61639009A172D /* TERMainController.swift */; };
 		B59BBC7B1CD61639009A172D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC791CD61639009A172D /* Main.storyboard */; };
 		B59BBC7D1CD61639009A172D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC7C1CD61639009A172D /* Assets.xcassets */; };
 		B59BBC801CD61639009A172D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B59BBC7E1CD61639009A172D /* LaunchScreen.storyboard */; };
@@ -28,10 +29,11 @@
 /* Begin PBXFileReference section */
 		0A5C85E2CBC3082852D34A28 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6C710E38CE24AB69AAEE42 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7E5EAF381CECD5E800037133 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		8BD2C59B48623B57E5B60EA5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B59BBC721CD61639009A172D /* TERTranslateEngRus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TERTranslateEngRus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59BBC751CD61639009A172D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B59BBC771CD61639009A172D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B59BBC771CD61639009A172D /* TERMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TERMainController.swift; sourceTree = "<group>"; };
 		B59BBC7A1CD61639009A172D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B59BBC7C1CD61639009A172D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B59BBC7F1CD61639009A172D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		B59BBC691CD61639009A172D = {
 			isa = PBXGroup;
 			children = (
+				7E5EAF381CECD5E800037133 /* README */,
 				B59BBDAC1CD61B09009A172D /* TERTranslateEngRus-Bridging-Header.h */,
 				B59BBC741CD61639009A172D /* TERTranslateEngRus */,
 				B59BBC731CD61639009A172D /* Products */,
@@ -95,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				B59BBC751CD61639009A172D /* AppDelegate.swift */,
-				B59BBC771CD61639009A172D /* ViewController.swift */,
+				B59BBC771CD61639009A172D /* TERMainController.swift */,
 				B59BBC791CD61639009A172D /* Main.storyboard */,
 				B59BBC7C1CD61639009A172D /* Assets.xcassets */,
 				B59BBC7E1CD61639009A172D /* LaunchScreen.storyboard */,
@@ -183,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5EAF391CECD5E800037133 /* README in Resources */,
 				B59BBC801CD61639009A172D /* LaunchScreen.storyboard in Resources */,
 				B59BBC7D1CD61639009A172D /* Assets.xcassets in Resources */,
 				B59BBC7B1CD61639009A172D /* Main.storyboard in Resources */,
@@ -245,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5D3807D1CD63B91006588B5 /* TERCoreData.swift in Sources */,
-				B59BBC781CD61639009A172D /* ViewController.swift in Sources */,
+				B59BBC781CD61639009A172D /* TERMainController.swift in Sources */,
 				B5D380791CD62378006588B5 /* TERWord.swift in Sources */,
 				B5D380771CD6207C006588B5 /* TERServis.swift in Sources */,
 				B59BBC761CD61639009A172D /* AppDelegate.swift in Sources */,
