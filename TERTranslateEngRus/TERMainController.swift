@@ -15,14 +15,14 @@ class TERMainController: UIViewController, UITableViewDataSource, UITableViewDel
     var searchText = ""
     var currentLanguage = "En"
     var activityIndicator: UIActivityIndicatorView!
+    var labelNavigation: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TERMainController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TERMainController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         searchResultController = UISearchController(searchResultsController: nil)
         searchResultController.searchResultsUpdater = self
         searchResultController.searchBar.placeholder = nil
@@ -31,25 +31,19 @@ class TERMainController: UIViewController, UITableViewDataSource, UITableViewDel
         searchResultController.hidesNavigationBarDuringPresentation = false
         searchResultController.searchBar.placeholder = "Search"
         let searchField = searchResultController.searchBar.valueForKey("searchField") as? UITextField
-        searchField?.font = UIFont(name: "Arial", size: 20)
+        searchField?.font = UIFont(name: "Arial", size: 18)
         self.definesPresentationContext = true
         self.tableView.tableHeaderView = searchResultController.searchBar
         setCurrentLanguage()
         let cache = TERCache(currentLanguage: self.currentLanguage)
-//        self.activityIndicator.activityIndicatorViewStyle = .Gray
         self.activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
         self.activityIndicator.frame = CGRectMake(0, 0, 20, 20)
-//        self.navigationItem.title = "Translation English to Russian"
-        let viewNavigation = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 20))
-        
+        let viewNavigation = UIView(frame: CGRect(x: 0, y: 0, width: 350, height: 20))
         viewNavigation.addSubview(self.activityIndicator)
-        let labelNavigation = UILabel(frame: CGRect(x: 30, y: 0, width: 270, height: 20))
-        labelNavigation.text = "Translation English to Russian"
-        viewNavigation.addSubview(labelNavigation)
-//        self.navigationItem.titleView = self.activityIndicator
+        self.labelNavigation = UILabel(frame: CGRect(x: 30, y: 0, width: 300, height: 20))
+        self.labelNavigation.text = "Translation English to Russian"
+        viewNavigation.addSubview(self.labelNavigation)
         self.navigationItem.titleView = viewNavigation
-        //self.activityIndicator.startAnimating()
-//        self.navigationItem.titleView = searchResultController.searchBar
         self.arrayTranslate = cache.getAllTranslate()
     }
     
@@ -77,10 +71,10 @@ class TERMainController: UIViewController, UITableViewDataSource, UITableViewDel
         let doubleLang = searchBarMode?.primaryLanguage
         if doubleLang == "en-US" {
             self.currentLanguage = "En"
-            self.navigationItem.title = "Translation English to Russian"
+            self.labelNavigation.text = "Translation English to Russian"
         } else if doubleLang == "ru-RU" {
             self.currentLanguage = "Ru"
-            self.navigationItem.title = "Перевод с Русского на Английский"
+            self.labelNavigation.text = "Перевод с Русского на Английский"
         }
     }
 
